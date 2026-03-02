@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use Calm Routines — Feature Guide</title>
+    <meta name="description"
+        content="Learn how to use every feature in Calm Routines — the AI-powered ADHD support app for parents. Step-by-step guides for Moment Mode, AI Chatbot, Planner, Routine Builder, and more.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adhdcalmroutines.com/how-to.html">
+    <meta property="og:title" content="How to Use Calm Routines — Feature Guide">
+    <meta property="og:description"
+        content="Step-by-step guides for every feature in the Calm Routines ADHD support app.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧘</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-light: #60a5fa;
+            --primary-dark: #1d4ed8;
+            --accent: #7c3aed;
+            --accent-light: #a78bfa;
+            --green: #16a34a;
+            --green-light: #4ade80;
+            --amber: #d97706;
+            --rose: #dc2626;
+            --bg: #0c0f1a;
+            --bg-surface: #131729;
+            --bg-card: #1a1f35;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.06);
+            --radius: 16px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ─── NAV ────────────────────────────── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 18px 0;
+            background: rgba(12, 15, 26, 0.88);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-light);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        /* ─── HERO ───────────────────────────── */
+        .hero {
+            padding: 150px 24px 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 30%, rgba(124, 58, 237, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: rgba(37, 99, 235, 0.12);
+            color: var(--primary-light);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* ─── TOC ────────────────────────────── */
+        .toc {
+            padding: 40px 24px;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .toc-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .toc-chip {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .toc-chip:hover {
+            border-color: var(--primary);
+            color: var(--primary-light);
+            background: rgba(37, 99, 235, 0.08);
+        }
+
+        /* ─── GUIDE SECTIONS ─────────────────── */
+        .guide-section {
+            padding: 80px 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .guide-section:nth-child(even) {
+            background: var(--bg-surface);
+            max-width: 100%;
+        }
+
+        .guide-section:nth-child(even) .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-emoji {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* Steps */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .step {
+            display: flex;
+            gap: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: all 0.3s;
+        }
+
+        .step:hover {
+            border-color: rgba(37, 99, 235, 0.25);
+            transform: translateX(4px);
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-body h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .step-body p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* Tips */
+        .tip {
+            background: rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .tip-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .tip p {
+            color: var(--primary-light);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Info box */
+        .info-box {
+            background: rgba(124, 58, 237, 0.08);
+            border: 1px solid rgba(124, 58, 237, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .info-box p {
+            color: var(--accent-light);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Premium badge */
+        .premium-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: rgba(124, 58, 237, 0.15);
+            color: var(--accent-light);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        /* ─── FOOTER ─────────────────────────── */
+        footer {
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        footer a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ─── ANIMATIONS ─────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── RESPONSIVE ─────────────────────── */
+        @media (max-width: 640px) {
+            .toc-inner {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .guide-section {
+                padding: 60px 20px;
+            }
+
+            .step {
+                padding: 18px;
+            }
+
+            .hero {
+                padding: 130px 20px 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nav -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🧘</div>
+                Calm Routines
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link active">How to Use</a>
+            </div>
+            <a href="index.html#waitlist" class="nav-cta">Join the Waitlist</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📖 Feature Guide</span>
+            <h1>How to use <span class="highlight">Calm Routines</span></h1>
+            <p>A step-by-step guide to every feature. Learn how to bring calm, structure, and support into your family's
+                daily life.</p>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="toc">
+        <div class="toc-inner">
+            <a href="#home" class="toc-chip">🏠 Home Screen</a>
+            <a href="#moment-mode" class="toc-chip">🚨 Moment Mode</a>
+            <a href="#chatbot" class="toc-chip">💬 AI Chatbot</a>
+            <a href="#planner" class="toc-chip">📋 Planner</a>
+            <a href="#routine-builder" class="toc-chip">🔄 Routine Builder</a>
+            <a href="#scripts" class="toc-chip">📖 Calming Scripts</a>
+            <a href="#focus" class="toc-chip">⏱️ Focus Reset</a>
+            <a href="#rewards" class="toc-chip">🎁 Rewards</a>
+            <a href="#meltdown-tracker" class="toc-chip">📊 Meltdown Tracker</a>
+            <a href="#homework" class="toc-chip">🎓 Homework Hub</a>
+            <a href="#insights" class="toc-chip">📈 Weekly Insights</a>
+            <a href="#handoff" class="toc-chip">🤝 Handoff Summary</a>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ 1. HOME SCREEN ═══════════ -->
+    <section class="guide-section" id="home">
+        <div class="section-content">
+            <div class="section-header reveal">
+                <span class="section-emoji">🏠</span>
+                <h2>Home Screen</h2>
+                <p>Your starting point — quick access to everything you need, when you need it most.</p>
+            </div>
+            <div class="steps reveal">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h3>Tap the quick-access buttons</h3>
+                        <p>At the top of the home screen you'll see two large buttons: <strong>🚨 Moment Mode</strong>
+                            for emergency de-escalation, and <strong>💬 Help Now</strong> for the AI chatbot. Tap
+                            whichever you need in the moment.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h3>Browse the feature grid</h3>
+                        <p>Below the buttons you'll find cards for <strong>Daily Routines</strong>, <strong>Routine
+                                Builder</strong>, <strong>Tracker</strong>, and <strong>Rewards</strong>. Tap any card
+                            to jump straight to that feature.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h3>Switch between child profiles</h3>
+                        <p>If you have multiple children set up, tap the profile selector at the top to switch between
+                            them. Each child has their own routines, rewards, and tracking data.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tip">
+                <span class="tip-icon">💡</span>
+                <p>The home screen adapts to your child's age group — content, scripts, and suggestions are tailored to
+                    be age-appropriate.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ 2. MOMENT MODE ═══════════ -->
+    <section class="guide-section" id="moment-mode">
+        <div class="section-content">
+            <div class="section-header reveal">
+                <span class="section-emoji">🚨</span>
+                <h2>Moment Mode</h2>
+                <p>Instant in-the-moment scripts when your child is in crisis. No searching, just answers.</p>
+            </div>
+            <div class="steps reveal">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h3>Tap "Moment Mode" from the home screen</h3>
+                        <p>The large red <strong>🚨 Moment Mode</strong> button is always at the top of the home
+                            screen. Tap it when your child is struggling and you need immediate guidance.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h3>Pick what's happening</h3>
+                        <p>Choose the scenario that matches the current situation — e.g. <strong>Meltdown</strong>,
+                            <strong>Refusal</strong>, <strong>Transition Trouble</strong>, <strong>Bedtime
+                                Battle</strong>, or <strong>Sensory Overload</strong>. Each has tailored scripts.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h3>Follow the step-by-step script</h3>
+                        <p>You'll see a clear, numbered de-escalation guide. Read each step aloud or follow it
+                            internally. Steps include what to say, what to do, and when to pause.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-body">
+                        <h3>Save to favourites</h3>
+                        <p>Find a script that works well for your child? Tap the heart icon to save it to your
+                            favourites for even faster access next time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tip">
+                <span class="tip-icon">💡</span>
+                <p>Moment Mode is designed to be usable with one hand while you're physically with your child. Steps are
+                    short and screen-glanceable.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ 3. AI CHATBOT ═══════════ -->
+    <section class="guide-section" id="chatbot">
+        <div class="section-content">
+            <div class="section-header reveal">
+                <span class="section-emoji">💬</span>
+                <h2>AI Meltdown Chatbot <span class="premium-badge">✨ Premium</span></h2>
+                <p>Real-time AI support that adapts to your child's age, triggers, and the situation at hand.</p>
+            </div>
+            <div class="steps reveal">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h3>Tap "Help Now" on the home screen</h3>
+                        <p>The green <strong>💬 Help Now</strong> button opens the AI chatbot. It's ready to help
+                            24/7 — no waiting, no appointments.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h3>Describe what's happening</h3>
+                        <p>Type or speak naturally. For example: <em>"My 7-year-old is screaming and refusing to get
+                                dressed for school"</em>. The AI understands context and responds with
+                            personalised advice.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h3>Get calming scripts and strategies</h3>
+                        <p>The chatbot provides age-appropriate de-escalation language, things to say (and not say), and
+                            practical next steps. It adapts as the conversation continues.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-body">
+                        <h3>Start a fresh conversation</h3>
+                        <p>Tap the <strong>reset</strong> button to clear the chat and start fresh with a new
+                            situation. Previous conversations are not stored.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box">
+                <span class="tip-icon">ℹ️</span>
+                <p>The AI chatbot uses your child's profile (age, known triggers, preferences) to give more relevant
+                    advice. Make sure profiles are up to date for the best experience.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ 4. DAILY & WEEKLY PLANNER ═══════════ -->
+    <section class="guide-section" id="planner">
+        <div class="section-content">
+            <div class="section-header reveal">
+                <span class="section-emoji">📋</span>
+                <h2>Daily &amp; Weekly Planner</h2>
+                <p>Visual task cards with points and rewards. Build structure your child can see, follow, and feel proud
+                    of.</p>
+            </div>
+            <div class="steps reveal">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h3>Add a task</h3>
+                        <p>Tap <strong>+ Add Task</strong> at the bottom of the planner. Give it a name (e.g. "Brush
+                            teeth"), assign a time slot, and set how many points it's worth.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h3>Drag and reorder</h3>
+                        <p>Press and hold any task card to drag it into a different position. Reorder tasks to match
+                            your child's natural flow — this makes a huge difference for ADHD brains.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h3>Complete tasks to earn points</h3>
+                        <p>Tap the checkbox on a task when your child finishes it. Points are added automatically and
+                            show in the points display at the top of the screen.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-body">
+                        <h3>Switch between daily and weekly views</h3>
+                        <p>Use the toggle at the top to switch between <strong>Daily</strong> and
+                            <strong>Weekly</strong> views. Weekly view shows all seven days at a glance so you can plan
+                            ahead.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-body">
+                        <h3>Use templates</h3>
+                        <p>Tap the templates icon to load pre-built routines (e.g. "School Morning", "Bedtime
+                            Routine") or save your current plan as a reusable template.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tip">
+                <span class="tip-icon">💡</span>
+                <p>Start with just 3–5 tasks per day. Overloading the planner can overwhelm ADHD children — build up
+                    gradually as habits stick.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ 5. ROUTINE BUILDER ═══════════ -->
+    <section class="guide-section" id="routine-builder">
+        <div class="section-content">
+            <div class="section-header reveal">
+                <span class="section-emoji">🔄</span>
+                <h2>Routine Builder</h2>
+                <p>Create step-by-step visual routines with timers that your child can follow independently.</p>
+            </div>
+            <div class="steps reveal">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h3>Create a new routine</h3>
+                        <p>Tap <strong>+ New Routine</strong> and give it a name — e.g. "Morning Routine", "After
+                            School Wind-Down", or "Bedtime Steps".</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h3>Add steps with timers</h3>
+                        <p>Add individual steps (e.g. "Get dressed — 5 minutes", "Eat breakfast — 10 minutes"). Each
+                            step can have a custom timer and an emoji icon.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h3>Reorder with drag-and-drop</h3>
+                        <p>Hold and drag steps to reorder them. The order matters — routines that flow naturally reduce
+                            friction and resistance.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-body">
+                        <h3>Start Routine Player</h3>
+                        <p>Tap <strong>▶ Play</strong> to launch the guided playback mode. Your child sees one step at
+                            a time with a visual countdown timer. They can mark each step as done.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tip">
+                <span class="tip-icon">💡</span>
+                <p>Let your child help build their own routines. Involvement gives them ownership and makes them far
+                    more
+                    likely to follow through.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ 6. CALMING SCRIPTS ═══════════ -->
+    <section class="guide-section" id="scripts">
+        <div class="section-content">
+            <div class="section-header reveal">
+                <span class="section-emoji">📖</span>
+                <h2>Calming Scripts Bank</h2>
+                <p>A library of the right words for the right moments — bedtime, transitions, meltdowns, and more.</p>
+            </div>
+            <div class="steps reveal">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h3>Browse by category</h3>
+                        <p>Scripts are organised into categories: <strong>Meltdowns</strong>,
+                            <strong>Transitions</strong>, <strong>Bedtime</strong>, <strong>Morning
+                                Routines</strong>, <strong>Homework</strong>, and more. Tap a category to see all
+                            available scripts.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h3>Filter by age group</h3>
+                        <p>Use the age filter to see scripts appropriate for your child's age: <strong>4–6</strong>,
+                            <strong>7–9</strong>, <strong>10–12</strong>, or <strong>13+</strong>. Language and tone
+                            adapt accordingly.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h3>Use a script in the moment</h3>
+                        <p>Tap any script to open it full-screen. Read the phrases aloud to your child — they're
+                            designed to de-escalate, validate, and redirect calmly.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-body">
+                        <h3>Save favourites</h3>
+                        <p>Found a script that really works? Tap the heart to save it. Your favourites appear at the
+                            top of the scripts bank for instant access.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box">
+                <span class="tip-icon">ℹ️</span>
+                <p>Scripts are written using evidence-based approaches including collaborative problem solving,
+                    low-demand
+                    parenting principles, and sensory regulation techniques.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ 7. FOCUS RESET ═══════════ -->
+    <section class="guide-section" id="focus">
+        <div class="section-content">
+            <div class="section-header reveal">
+                <span class="section-emoji">⏱️</span>
+                <h2>Focus Reset Sessions <span class="premium-badge">✨ Premium</span></h2>
+                <p>Guided breathing exercises and interactive fidget tools to help your child regulate and refocus.</p>
+            </div>
+            <div class="steps reveal">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h3>Choose an age preset</h3>
+                        <p>Select the age-appropriate preset: <strong>4–6</strong> (shorter, simpler),
+                            <strong>7–9</strong>, <strong>10–12</strong>, or <strong>13+</strong> (longer,
+                            more advanced). Each adjusts timing and visual complexity.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h3>Start a breathing exercise</h3>
+                        <p>Tap <strong>Start</strong> to begin the guided breathing animation. Your child follows the
+                            visual cue — breathe in as the circle grows, breathe out as it shrinks.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h3>Try the fidget tools</h3>
+                        <p>Swipe to the fidget tools tab for interactive tactile activities — tap patterns, colour
+                            mixing, and rhythm games that help redirect restless energy.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-body">
+                        <h3>Remote-start from another room</h3>
+                        <p>If your child has their own device, you can start a Focus Reset session remotely from the
+                            <strong>Manage Focus</strong> screen — perfect for when they need a break but you're not
+                            next to them.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="tip">
+                <span class="tip-icon">💡</span>
+                <p>Focus Reset sessions work best as a proactive tool, not just reactive. Try scheduling them before
+                    homework or transitions to prevent overwhelm.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ 8. REWARDS ═══════════ -->
+    <section class="guide-section" id="rewards">
+        <div class="section-content">
+            <div class="section-header reveal">
+                <span class="section-emoji">🎁</span>
+                <h2>Rewards &amp; Points</h2>
+                <p>Positive reinforcement that actually works — children earn points and unlock real rewards.</p>
+            </div>
+            <div class="steps reveal">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h3>Points are earned automatically</h3>
+                        <p>When your child completes tasks in the daily planner, they earn the assigned points. The
+                            running total appears at the top of the screen with a satisfying animation.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h3>Set up custom rewards</h3>
+                        <p>Go to the <strong>Rewards</strong> screen and tap <strong>+ Add Reward</strong>. Create
+                            rewards like "Extra screen time — 50 points", "Trip to the park — 100 points", or "Choose
+                            dinner — 30 points".</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h3>Set milestones</h3>
+                        <p>Create bigger milestone rewards for longer-term goals. These appear as a progress bar so
+                            your child can see how close they are — great for building persistence.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-body">
+                        <h3>Redeem rewards</h3>
+                        <p>When your child has enough points, they can "spend" them on a reward. Tap the reward card and
+                            confirm — a celebration animation plays on screen.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box">
+                <span class="tip-icon">ℹ️</span>
+                <p>The points system is designed around positive reinforcement — not punishment. There's no point
+                    deduction for bad behaviour. Focus on what they do well.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ 9. MELTDOWN TRACKER ═══════════ -->
+    <section class="guide-section" id="meltdown-tracker">
+        <div class="section-content">
+            <div class="section-header reveal">
+                <span class="section-emoji">📊</span>
+                <h2>Meltdown Tracker</h2>
+                <p>Log, track, and analyse meltdown patterns to identify triggers and see progress over time.</p>
+            </div>
+            <div class="steps reveal">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h3>Log a meltdown</h3>
+                        <p>Tap <strong>+ Log Meltdown</strong> after the moment has passed. Record the
+                            <strong>trigger</strong> (e.g. transition, sensory, frustration), <strong>intensity</strong>
+                            (1–5 scale), <strong>duration</strong>, and
+                            <strong>what helped</strong> bring them back.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h3>Add notes</h3>
+                        <p>Use the free-text notes field to capture details: time of day, what happened before, how you
+                            responded, anything unusual. These notes are invaluable when speaking with professionals.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h3>View trends and patterns</h3>
+                        <p>The tracker shows visual charts: meltdowns by day of week, by trigger type, intensity over
+                            time, and most/least effective strategies. Patterns you didn't notice become obvious.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-body">
+                        <h3>Export reports</h3>
+                        <p>Tap <strong>Export</strong> to download a summary report you can share with your child's
+                            school, SENCO, therapist, or GP. Includes charts and key data points.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tip">
+                <span class="tip-icon">💡</span>
+                <p>Log meltdowns as soon as you can after they happen — you'll forget critical details like triggers and
+                    what de-escalated the situation. Even a quick log is better than none.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ 10. HOMEWORK HUB ═══════════ -->
+    <section class="guide-section" id="homework">
+        <div class="section-content">
+            <div class="section-header reveal">
+                <span class="section-emoji">🎓</span>
+                <h2>Homework Hub</h2>
+                <p>Structure homework time with timers and task lists designed for ADHD learners.</p>
+            </div>
+            <div class="steps reveal">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h3>Add homework tasks</h3>
+                        <p>Tap <strong>+ Add Task</strong> and enter subject, description, and estimated time. Break
+                            larger assignments into smaller, manageable chunks — this is key for ADHD focus.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h3>Start the timer</h3>
+                        <p>Each task has a built-in timer. Tap <strong>Start</strong> to begin. Short, focused sessions
+                            (10–15 minutes) with breaks in between work best for most ADHD children.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h3>Take structured breaks</h3>
+                        <p>When the timer ends, a break prompt appears. Use this time for movement, a snack, or a quick
+                            Focus Reset session before the next task.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-body">
+                        <h3>Check off completed tasks</h3>
+                        <p>Mark each task as done. Completed tasks earn points toward your child's rewards, reinforcing
+                            the habit of finishing homework.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box">
+                <span class="tip-icon">ℹ️</span>
+                <p>The Homework Hub uses the Pomodoro-inspired approach with ADHD-friendly shorter intervals. Consistent
+                    structure removes the daily "homework battle".</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ 11. WEEKLY INSIGHTS ═══════════ -->
+    <section class="guide-section" id="insights">
+        <div class="section-content">
+            <div class="section-header reveal">
+                <span class="section-emoji">📈</span>
+                <h2>Weekly Insights <span class="premium-badge">✨ Premium</span></h2>
+                <p>AI-generated weekly reports on meltdowns, routines, and progress — see the bigger picture.</p>
+            </div>
+            <div class="steps reveal">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h3>View your weekly report</h3>
+                        <p>Each week, Calm Routines generates a report based on your logged data. It shows meltdown
+                            frequency, most common triggers, routine adherence, and points earned.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h3>Read AI-generated insights</h3>
+                        <p>The AI summarises patterns in plain language: <em>"Meltdowns decreased by 20% this
+                                week"</em>, <em>"Mornings are improving but bedtime transitions remain
+                                challenging"</em>. Actionable, not clinical.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h3>Track progress over time</h3>
+                        <p>Scroll through past weeks to see trends. The visual timeline helps you see the impact
+                            of changes you've made — even when day-to-day feels chaotic.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-body">
+                        <h3>Share with professionals</h3>
+                        <p>Tap <strong>Share Report</strong> to export a formatted summary you can email to your
+                            child's teacher, SENCO, therapist, or paediatrician.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tip">
+                <span class="tip-icon">💡</span>
+                <p>The more consistently you log data (meltdowns, task completion, routines), the more accurate and
+                    useful your weekly insights become. Even imperfect data helps.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ 12. HANDOFF SUMMARY ═══════════ -->
+    <section class="guide-section" id="handoff">
+        <div class="section-content">
+            <div class="section-header reveal">
+                <span class="section-emoji">🤝</span>
+                <h2>Handoff Summary</h2>
+                <p>Create one-page summaries for teachers, carers, or babysitters — everything they need to know about
+                    your child.</p>
+            </div>
+            <div class="steps reveal">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h3>Open the Handoff Summary</h3>
+                        <p>Navigate to the Handoff Summary from the home screen or settings menu. It pulls together
+                            key information about your child into a shareable document.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h3>Review what's included</h3>
+                        <p>The summary covers: <strong>triggers to watch for</strong>, <strong>what works to
+                                calm them</strong>, <strong>their current routine</strong>, <strong>medication (if
+                                any)</strong>, and <strong>emergency contacts</strong>. Edit any section as needed.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h3>Share with anyone who cares for your child</h3>
+                        <p>Tap <strong>Share</strong> to send the summary via email, WhatsApp, or print it out. Perfect
+                            for handing to a supply teacher, babysitter, grandparent, or after-school club leader.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box">
+                <span class="tip-icon">ℹ️</span>
+                <p>Keep the Handoff Summary updated — especially after major changes to your child's routine, triggers,
+                    or strategies. You can regenerate it at any time with one tap.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>🧘 <a href="index.html">Calm Routines</a> — ADHD support for parents | <a href="index.html#waitlist">Join the
+                Waitlist</a></p>
+        <p style="margin-top: 8px;">© 2026 Calm Routines. <a
+                href="https://adhdcalmroutines.com">adhdcalmroutines.com</a></p>
+    </footer>
+
+
+    <script>
+        // ── Scroll-reveal animations ──
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+        );
+        revealEls.forEach(el => observer.observe(el));
+
+        // ── Smooth scroll for TOC chips ──
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const id = anchor.getAttribute('href');
+                if (id === '#') return;
+                const target = document.querySelector(id);
+                if (target) {
+                    e.preventDefault();
+                    const navH = document.querySelector('nav').offsetHeight;
+                    window.scrollTo({
+                        top: target.getBoundingClientRect().top + window.scrollY - navH - 20,
+                        behavior: 'smooth',
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
